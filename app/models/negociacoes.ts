@@ -1,6 +1,7 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
+
     private negociacoes: Array<Negociacao> = [];
 
     adiciona(negociacao: Negociacao): void {
@@ -10,7 +11,5 @@ export class Negociacoes {
     lista(): ReadonlyArray<Negociacao> {
         return this.negociacoes;
     }
-}
 
-const lista = new Negociacoes();
-lista.adiciona(new Negociacao(new Date(), 50, 125.0));
+}

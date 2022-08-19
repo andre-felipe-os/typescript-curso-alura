@@ -5,8 +5,8 @@ export class NegociacoesView extends View<Negociacoes> {
 
     protected template(modelo: Negociacoes): string {
         return `
-        <table>
-            <thead class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered">
+            <thead>
                 <tr>
                     <th>DATA</th>
                     <th>QUANTIDADE</th>

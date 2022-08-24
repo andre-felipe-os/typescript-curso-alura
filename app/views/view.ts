@@ -4,7 +4,12 @@ export abstract class View<T> {
 
     constructor(seletor: string,
             private escapar: boolean = false) {
-        this.elemento = document.querySelector(seletor);
+        const elemento = document.querySelector(seletor);
+        if (elemento) {
+            this.elemento = elemento as HTMLInputElement;
+        } else {
+            throw Error(`Seletor ${seletor} não existe no DOM.`);
+        }
     }
 
     protected abstract template(modelo: T): string;

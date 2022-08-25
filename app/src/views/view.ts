@@ -1,3 +1,5 @@
+import { mostrarTempoDeExecucao } from "../decorators/mostrar-tempo-de-execucao.js";
+
 export abstract class View<T> {
 
     protected elemento: HTMLElement;
@@ -14,6 +16,7 @@ export abstract class View<T> {
 
     protected abstract template(modelo: T): string;
 
+    @mostrarTempoDeExecucao()
     public update(modelo: T): void {
         let template = this.template(modelo);
         if (this.escapar) {

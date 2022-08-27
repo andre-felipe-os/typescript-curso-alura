@@ -6,14 +6,6 @@ export class Negociacao {
         public readonly valor: number
     ) {}
 
-    get data(): Date {
-        return new Date(this._data.getTime());
-    }
-
-    get volume(): number {
-        return this.quantidade * this.valor;
-    }
-
     public static criaDe(dataString: string,
             quantidadeString: string,
             valorString: string): Negociacao {
@@ -22,6 +14,14 @@ export class Negociacao {
         const quantidade = parseInt(quantidadeString);
         const valor = parseFloat(valorString);
         return new Negociacao(data, quantidade, valor);
+    }
+
+    get data(): Date {
+        return new Date(this._data.getTime());
+    }
+
+    get volume(): number {
+        return this.quantidade * this.valor;
     }
     
 }

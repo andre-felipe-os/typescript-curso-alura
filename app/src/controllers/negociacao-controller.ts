@@ -1,7 +1,5 @@
 import { domInjector } from "../decorators/dom-injector.js";
-import { mostrarTempoDeExecucao } from "../decorators/mostrar-tempo-de-execucao.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
-import { NegociacaoDoDia } from "../interfaces/negociacao-do-dia.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { NegociacoesService } from "../services/negociacoes-service.js";

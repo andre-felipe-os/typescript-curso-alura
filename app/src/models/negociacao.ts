@@ -1,6 +1,7 @@
+import { Comparavel } from "../interfaces/comparavel.js";
 import { Imprimivel } from "../interfaces/imprimivel.js";
 
-export class Negociacao implements Imprimivel {
+export class Negociacao implements Imprimivel, Comparavel<Negociacao> {
 
     constructor(
         private _data: Date,
@@ -32,6 +33,12 @@ export class Negociacao implements Imprimivel {
             Quantidade: ${this.quantidade}
             Valor: ${this.valor}
         `;
+    }
+
+    public verificaSeIgual(outraNegociacao: Negociacao): boolean {
+        return this.quantidade === outraNegociacao.quantidade
+            && this.valor === outraNegociacao.valor
+            && this.data.toDateString() === outraNegociacao.data.toDateString();
     }
 
 }
